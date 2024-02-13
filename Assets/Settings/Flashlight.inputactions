@@ -1,0 +1,34 @@
+{
+    "name": "Flashlight",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "2bf08357-1c63-4a83-a114-3fb533ab67fb",
+            "actions": [
+                {
+                    "name": "RotateFlashlight",
+                    "type": "Value",
+                    "id": "5643f486-c42f-4453-8423-3157b2e3fe3a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cf49f4a6-9d11-4ee0-a6bc-55964bb339ab",
+                    "path": "<Mouse>/delta/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateFlashlight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
