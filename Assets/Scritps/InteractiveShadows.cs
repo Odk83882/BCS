@@ -26,27 +26,6 @@ public class InteractiveShadows : MonoBehaviour
 
     [SerializeField][Range(0.02f, 1f)] private float shadowColliderUpdateTime = 0.08f;
 
-<<<<<<< Updated upstream
-=======
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            frezeCollider = !frezeCollider;
-            if (frezeCollider)
-            {
-                shadowCollider.isTrigger = false;
-                Debug.Log("Shadow frozen!");
-            }
-            else
-            {
-                shadowCollider.isTrigger = true;
-                Debug.Log("Shadow unfrozen!");
-            }
-        }
-    }
-
->>>>>>> Stashed changes
     private void Awake()
     {
         InitializeShadowCollider();
@@ -60,14 +39,7 @@ public class InteractiveShadows : MonoBehaviour
 
     private void Update()
     {
-<<<<<<< Updated upstream
         shadowTransform.position = transform.position;
-=======
-        if (frezeCollider == false)
-        {
-            shadowTransform.position = transform.position;
-        }
->>>>>>> Stashed changes
     }
 
     private void FixedUpdate()
@@ -82,6 +54,7 @@ public class InteractiveShadows : MonoBehaviour
         previousRotation = transform.rotation;
         previousScale = transform.localScale;
     }
+
     private void InitializeShadowCollider()
     {
         GameObject shadowGameObject = shadowTransform.gameObject;
