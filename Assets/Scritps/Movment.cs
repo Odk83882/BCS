@@ -18,31 +18,23 @@ public class movement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.position += transform.forward * Speed * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            transform.position -= transform.forward * Speed * Time.deltaTime;
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position += transform.right * Speed * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            transform.position -= transform.right * Speed * Time.deltaTime;
-        }
-
         if (isGrounded)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKey(KeyCode.W))
             {
                 rb.AddForce(Vector3.up * jumpHeight);
             }
         }
+      
+    
+        if (Input.GetKey(KeyCode.D))
+            {
+                transform.position += transform.right * Speed * Time.deltaTime;
+            }
+        else if (Input.GetKey(KeyCode.A))
+            {
+                transform.position -= transform.right * Speed * Time.deltaTime;
+            }
     }
 
 

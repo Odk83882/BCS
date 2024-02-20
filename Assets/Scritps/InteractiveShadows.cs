@@ -24,22 +24,43 @@ public class InteractiveShadows : MonoBehaviour
 
     private bool canUpdateCollider = true;
 
+    private bool frezeCollider = false;
+
     [SerializeField][Range(0.02f, 1f)] private float shadowColliderUpdateTime = 0.08f;
+
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.R) && frezeCollider == false)
+        {
+            frezeCollider = true;
+        }
+        else if (Input.GetKey(KeyCode.R) && frezeCollider == true)
+        {
+            frezeCollider = false;
+        }
+    }
 
     private void Awake()
     {
-        InitializeShadowCollider();
+        if (frezeCollider == false)
+        {
+            InitializeShadowCollider();
 
-        lightType = lightTransform.GetComponent<Light>().type;
+            lightType = lightTransform.GetComponent<Light>().type;
 
-        objectVertices = transform.GetComponent<MeshFilter>().mesh.vertices.Distinct().ToArray();
+            objectVertices = transform.GetComponent<MeshFilter>().mesh.vertices.Distinct().ToArray();
 
-        shadowColliderMesh = new Mesh();
+            shadowColliderMesh = new Mesh();
+        }
     }
 
-    private void Update()
+    void LateUpdate()
     {
-        shadowTransform.position = transform.position;
+        if (frezeCollider == false)
+        {
+            shadowTransform.position = transform.position;
+        }
+
     }
 
     private void FixedUpdate()
@@ -89,7 +110,7 @@ public class InteractiveShadows : MonoBehaviour
             }
 
             points[i] = ComputeIntersectionPoint(point, raycastDirection);
-            
+
             points[n + i] = ComputeExtrusionPoint(point, points[i]);
         }
 
