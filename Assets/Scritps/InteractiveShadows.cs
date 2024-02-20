@@ -30,14 +30,20 @@ public class InteractiveShadows : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.R) && frezeCollider == false)
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            frezeCollider = true;
+            frezeCollider = !frezeCollider;
+
+            if(frezeCollider)
+            {
+                shadowCollider.isTrigger = false;
+            }
+            else
+            {
+                shadowCollider.isTrigger = true;
+            }
         }
-        else if (Input.GetKey(KeyCode.R) && frezeCollider == true)
-        {
-            frezeCollider = false;
-        }
+        
     }
 
     private void Awake()
