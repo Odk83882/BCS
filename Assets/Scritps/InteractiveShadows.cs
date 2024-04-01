@@ -37,6 +37,7 @@ public class InteractiveShadows : MonoBehaviour
             if(frezeCollider)
             {
                 shadowCollider.isTrigger = false;
+                canUpdateCollider = false;
             }
             else
             {
