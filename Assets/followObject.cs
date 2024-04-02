@@ -23,5 +23,6 @@ public class followObject : MonoBehaviour
     void Update()
     {
         transform.position = followedObject.transform.position + new Vector3(0, 1, 0);
+        transform.rotation = followedObject.transform.rotation;
     }
 }

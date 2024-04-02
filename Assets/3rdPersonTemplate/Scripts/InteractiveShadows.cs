@@ -42,6 +42,7 @@ public class InteractiveShadows : MonoBehaviour
             else
             {
                 shadowCollider.isTrigger = true;
+                canUpdateCollider = true;
             }
         }
         
