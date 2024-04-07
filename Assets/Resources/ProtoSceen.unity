@@ -452,7 +452,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 3739e562a03fc0b4982d8aa66cc50865, type: 3}
+  - {fileID: 2100000, guid: 979aef027a1c86c42a15ce35fce366fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -489,12 +489,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313161117}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73449597af1ac32439a6427437c1369e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2086657014}
+  player: {fileID: 1757212764}
   respownPoint: {fileID: 132091226}
 --- !u!65 &313161123
 BoxCollider:
@@ -512,7 +512,7 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 362189789}
   - component: {fileID: 362189788}
   - component: {fileID: 362189787}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -962,6 +962,134 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1762682258}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &729605096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 729605101}
+  - component: {fileID: 729605100}
+  - component: {fileID: 729605099}
+  - component: {fileID: 729605098}
+  - component: {fileID: 729605097}
+  - component: {fileID: 729605102}
+  m_Layer: 15
+  m_Name: PlayerDeath
+  m_TagString: PlayerDeath
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &729605097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729605096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b83f29af1f93ffc42ab4df28579c0df8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yOffset: 0
+  copyRotation: 0
+--- !u!114 &729605098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729605096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de7aeeaf70d14c46adade3e022ce022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1757212764}
+  respownPoint: {fileID: 132091226}
+--- !u!136 &729605099
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729605096}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 32768
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Height: 1.86
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.07, z: 0}
+--- !u!114 &729605100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729605096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b83f29af1f93ffc42ab4df28579c0df8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yOffset: 1
+  copyRotation: 0
+--- !u!4 &729605101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729605096}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 17, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &729605102
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729605096}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &779058032
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,7 +1099,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 779058033}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1464,7 +1592,7 @@ GameObject:
   - component: {fileID: 1190404457}
   - component: {fileID: 1190404456}
   - component: {fileID: 1190404455}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: moving_platform
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1610,7 +1738,7 @@ GameObject:
   - component: {fileID: 1203228981}
   - component: {fileID: 1203228980}
   - component: {fileID: 1203228979}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: wall (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2014,7 +2142,7 @@ GameObject:
   - component: {fileID: 1363459785}
   - component: {fileID: 1363459784}
   - component: {fileID: 1363459783}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2547,7 +2675,7 @@ GameObject:
   - component: {fileID: 1689046106}
   - component: {fileID: 1689046105}
   - component: {fileID: 1689046104}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2759,6 +2887,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerArmature
       objectReference: {fileID: 0}
+    - target: {fileID: 4416926081852918491, guid: 64dce48905ffd9b4293e595fa6941544,
+        type: 3}
+      propertyPath: m_Height
+      value: 1.8
+      objectReference: {fileID: 0}
     - target: {fileID: 8187455079231382173, guid: 64dce48905ffd9b4293e595fa6941544,
         type: 3}
       propertyPath: m_TagString
@@ -2809,6 +2942,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6de7aeeaf70d14c46adade3e022ce022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  respownPoint: {fileID: 0}
 --- !u!1 &1764214107
 GameObject:
   m_ObjectHideFlags: 0
@@ -2886,7 +3021,7 @@ GameObject:
   - component: {fileID: 1793014460}
   - component: {fileID: 1793014459}
   - component: {fileID: 1793014458}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: wall (3)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -3063,7 +3198,7 @@ GameObject:
   - component: {fileID: 1877515306}
   - component: {fileID: 1877515305}
   - component: {fileID: 1877515304}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: wall (2)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -3168,7 +3303,7 @@ GameObject:
   - component: {fileID: 1971229193}
   - component: {fileID: 1971229192}
   - component: {fileID: 1971229191}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: wall
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -3583,6 +3718,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83f29af1f93ffc42ab4df28579c0df8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  yOffset: 1
+  copyRotation: 1
 --- !u!65 &2086657020
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3760,3 +3897,4 @@ SceneRoots:
   - {fileID: 477035273}
   - {fileID: 779058033}
   - {fileID: 132091226}
+  - {fileID: 729605101}

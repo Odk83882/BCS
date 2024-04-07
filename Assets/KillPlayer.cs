@@ -21,7 +21,7 @@ public class KillPlayer : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         Debug.Log("fortinit");
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("PlayerDeath"))
         {
             Debug.Log("dfghj");
             Scene currentScene = SceneManager.GetActiveScene();

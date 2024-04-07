@@ -5,6 +5,12 @@ using UnityEngine;
 public class followObject : MonoBehaviour
 {
     private GameObject followedObject;
+
+    [SerializeField]
+    private int yOffset = 1;
+
+    [SerializeField]
+    private bool copyRotation = false;
     
     private void Awake()
     {
@@ -22,7 +28,11 @@ public class followObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = followedObject.transform.position + new Vector3(0, 1, 0);
-        transform.rotation = followedObject.transform.rotation;
+        transform.position = followedObject.transform.position + new Vector3(0, yOffset, 0);
+        if (copyRotation)
+        {
+            transform.rotation = followedObject.transform.rotation;
+        }
+        
     }
 }
