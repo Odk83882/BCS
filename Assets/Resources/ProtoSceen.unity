@@ -1242,8 +1242,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6de7aeeaf70d14c46adade3e022ce022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _deathScreen: {fileID: 1824510130}
   player: {fileID: 1757212764}
   respownPoint: {fileID: 132091226}
+  dalayTime: 3
 --- !u!136 &729605099
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3580,8 +3582,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6de7aeeaf70d14c46adade3e022ce022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _deathScreen: {fileID: 0}
   player: {fileID: 0}
   respownPoint: {fileID: 0}
+  dalayTime: 3
 --- !u!1 &1764214107
 GameObject:
   m_ObjectHideFlags: 0
