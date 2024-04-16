@@ -26,7 +26,6 @@ public class death : MonoBehaviour
     {
         if(other.gameObject.CompareTag("kill"))
         {
-            Debug.Log("dafgaf");
             _deathScreen.SetActive(true);
             Invoke("SceneReset", 3);
             
