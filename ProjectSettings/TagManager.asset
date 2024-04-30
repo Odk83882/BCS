@@ -9,6 +9,7 @@ TagManager:
   - Anchor
   - kill
   - PlayerDeath
+  - win
   layers:
   - Default
   - TransparentFX

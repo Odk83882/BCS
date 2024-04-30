@@ -33,10 +33,13 @@ public class death : MonoBehaviour
         }
     }
 
+
+
     void SceneReset()
     {
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
         player.transform.position = respownPoint.position;
     }
+
 }

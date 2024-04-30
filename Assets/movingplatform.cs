@@ -5,26 +5,10 @@ using UnityEngine.UIElements;
 
 public class movingplatform : MonoBehaviour
 {
-    public Rigidbody rb;
-    public float movingSpeed = 0.0001f;
-    public bool rightleft = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-
-    }
-    // Update is called once per frame
+    public float movingSpeed = 1f;
     void Update()
     {
-        if (rightleft)
-        {
-            transform.position = transform.position + new Vector3(movingSpeed, 0, 0);
-        }else
-        {
-            transform.position = transform.position + new Vector3(0, 0, movingSpeed);
-        }
-
+            transform.position = transform.position + transform.forward * movingSpeed * Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other)
