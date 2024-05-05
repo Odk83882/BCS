@@ -7,7 +7,6 @@ public class victoryRoyal : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject _winScreen;
-    public GameObject player;
     
     void Start()
     {
