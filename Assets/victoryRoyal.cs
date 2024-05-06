@@ -20,7 +20,7 @@ public class victoryRoyal : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("win"))
+        if(other.gameObject.CompareTag("Player"))
         {
             //_winScreen.SetActive(true);
             Invoke("NextLevel", 3);
