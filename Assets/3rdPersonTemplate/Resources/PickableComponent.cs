@@ -5,8 +5,9 @@ public class PickableComponent : MonoBehaviour
 {
 
     public int layerNumber = 8;
-
-    // Start is called before the first frame update
+    public GameObject StarCounter;
+    
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == layerNumber )
@@ -17,6 +18,7 @@ public class PickableComponent : MonoBehaviour
 
     private void HideObject()
     {
+        //StarCounter.addStar();
         this.gameObject.SetActive(false);
     }
 }
