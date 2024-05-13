@@ -13,6 +13,9 @@ public class InteractiveShadows : MonoBehaviour
 
     [SerializeField] private Vector3 extrusionDirection = Vector3.zero;
 
+    public Material material;
+    public GameObject shadowGameObject;
+
     private Vector3[] objectVertices;
 
     private Mesh shadowColliderMesh;
@@ -27,7 +30,7 @@ public class InteractiveShadows : MonoBehaviour
     private bool frezeCollider = false;
 
     [SerializeField][Range(0.02f, 1f)] private float shadowColliderUpdateTime = 0.08f;
-
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -67,6 +70,7 @@ public class InteractiveShadows : MonoBehaviour
         if (frezeCollider == false)
         {
             shadowTransform.position = transform.position;
+            shadowGameObject.GetComponent<MeshFilter>().mesh = shadowCollider.sharedMesh;
         }
 
     }
@@ -86,9 +90,12 @@ public class InteractiveShadows : MonoBehaviour
 
     private void InitializeShadowCollider()
     {
-        GameObject shadowGameObject = shadowTransform.gameObject;
         //shadowGameObject.hideFlags = HideFlags.HideInHierarchy; //OPTIONNAL
         shadowCollider = shadowGameObject.AddComponent<MeshCollider>();
+
+
+        shadowGameObject.GetComponent<MeshRenderer>().material = material;
+        
         shadowCollider.convex = true;
         shadowCollider.isTrigger = true;
     }
@@ -97,7 +104,10 @@ public class InteractiveShadows : MonoBehaviour
     {
         shadowColliderMesh.vertices = ComputeShadowColliderMeshVertices();
         shadowCollider.sharedMesh = shadowColliderMesh;
-        canUpdateCollider = true;
+        if (frezeCollider == false) 
+        { 
+            canUpdateCollider = true; 
+        }
     }
 
     private Vector3[] ComputeShadowColliderMeshVertices()
