@@ -11,7 +11,7 @@ public class starsCount : MonoBehaviour
     public GameObject twoStars;
     public GameObject threeStars;
 
-    private void addStar()
+    public void addStar()
     {
         collectedStars = collectedStars + 1;
     }
