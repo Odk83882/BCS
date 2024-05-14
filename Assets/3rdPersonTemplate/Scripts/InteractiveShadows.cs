@@ -70,7 +70,7 @@ public class InteractiveShadows : MonoBehaviour
         if (frezeCollider == false)
         {
             shadowTransform.position = transform.position;
-            shadowGameObject.GetComponent<MeshFilter>().mesh = shadowCollider.sharedMesh;
+            shadowGameObject.GetComponent<MeshFilter>().mesh = shadowColliderMesh;
         }
 
     }
@@ -98,6 +98,8 @@ public class InteractiveShadows : MonoBehaviour
         
         shadowCollider.convex = true;
         shadowCollider.isTrigger = true;
+
+        //shadowColliderMesh.triangles = new int[objectVertices.Length * 3];
     }
 
     private void UpdateShadowCollider()
@@ -113,6 +115,7 @@ public class InteractiveShadows : MonoBehaviour
     private Vector3[] ComputeShadowColliderMeshVertices()
     {
         Vector3[] points = new Vector3[2 * objectVertices.Length];
+        int[] triangles = new int[objectVertices.Length * 3];
 
         Vector3 raycastDirection = lightTransform.forward;
 
@@ -130,6 +133,19 @@ public class InteractiveShadows : MonoBehaviour
             points[i] = ComputeIntersectionPoint(point, raycastDirection);
 
             points[n + i] = ComputeExtrusionPoint(point, points[i]);
+
+            if (i < n - 2)
+            {
+                triangles[i * 3] = i;
+                triangles[i * 3 + 1] = n + i;
+                triangles[i * 3 + 2] = n + i + 1;
+            }
+            else
+            {
+                triangles[i * 3] = i;
+                triangles[i * 3 + 1] = n + i;
+                triangles[i * 3 + 2] = 0;
+            }
         }
 
         return points;
