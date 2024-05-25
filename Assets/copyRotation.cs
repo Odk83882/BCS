@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class copyRotation : MonoBehaviour
 {
-    private GameObject followedObject;
+    public GameObject followedObject;
 
-    private void Awake()
-    {
-        if (followedObject == null)
-        {
-            followedObject = GameObject.FindGameObjectWithTag("Player");
-        }
-    }
     // Update is called once per frame
     void Update()
     {

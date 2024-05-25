@@ -10,6 +10,8 @@ TagManager:
   - kill
   - PlayerDeath
   - win
+  - Enemy
+  - StaminaBar
   layers:
   - Default
   - TransparentFX

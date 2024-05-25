@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class copyPosition : MonoBehaviour
 {
-    private GameObject followedObject;
+    public GameObject followedObject;
 
     [SerializeField]
-    private int yOffset = 1;
+    private float xOffset;
+    [SerializeField]
+    private float yOffset;
+    [SerializeField]
+    private float zOffset;
 
-    private void Awake()
-    {
-        if (followedObject == null)
-        {
-            followedObject = GameObject.FindGameObjectWithTag("Player");
-        }
-    }
+
     // Update is called once per frame
     void Update()
     {
-        transform.position = followedObject.transform.position + new Vector3(0, yOffset, 0);
+        transform.position = followedObject.transform.position + new Vector3(xOffset, yOffset, zOffset);
     }
 }
